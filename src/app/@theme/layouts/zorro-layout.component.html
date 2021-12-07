@@ -1,0 +1,66 @@
+<nz-layout class="summer-layout-wrapper" style="width: 100%;">
+  <nz-sider class="summer-sidebar" nzCollapsible nzWidth="200px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="summer-sidebar__logo">
+      <a routerLink="/">
+        <img src="../../assets/images/ajke/ajke-blue-logo.svg" alt="logo" />
+      </a>
+    </div>
+    <ul class="summer-sidebar__menus" nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item [routerLink]="routeLinks.Dashboard">
+        <i nz-icon nzType="dashboard"></i>
+        <span>Dashboard</span>
+      </li>
+      <nz-divider style="margin: 0"></nz-divider>
+      <li nz-submenu nzTitle="Users" nzIcon="unordered-list">
+        <ul>
+          <li nz-menu-item [routerLink]="routeLinks.Users">ALl Users</li>
+          <li nz-menu-item [routerLink]="routeLinks.Users">Create User</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-header class="summer-header">
+    <!-- <div class="app-header">
+			<span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+				<i
+					class="trigger"
+					nz-icon
+					[nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+				></i>
+			</span>
+		</div> -->
+    <div class="summer-header__left">
+      <!-- <h3 class="summer-header-title">{{ name }}</h3> -->
+    </div>
+    <div class="summer-header__right">
+      <div class="summer-header__actions">
+        <a nz-dropdown [nzTrigger]="'click'" [nzDropdownMenu]="menu">
+          <div class="flex items-center cursor-pointer">
+            <img class="summer-header__avater" src="{{ userAvatar || 'http://placehold.it/50x50' }}" alt="" />
+            <h3 class="summer-header_username">{{ userName }}</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nz-header>
+  <nz-layout class="summer-layout-inner" style="margin-left: 200px">
+    <nz-content class="summer-content">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+<!--===== start references area =====-->
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item class="py-2">
+      <a [routerLink]="'[routeLinks.UserProfile]'" [queryParams]="{ tab: 'UserInfo' }">
+        <i nz-icon nzType="user" nzTheme="outline"></i> <span>Profile</span>
+      </a>
+    </li>
+    <li nz-menu-item class="py-2 space-x-2" (click)="onLogout()">
+      <i nz-icon nzType="logout" nzTheme="outline"></i> <span>Logout</span>
+    </li>
+  </ul>
+</nz-dropdown-menu>
+<!--===== completed references area =====-->

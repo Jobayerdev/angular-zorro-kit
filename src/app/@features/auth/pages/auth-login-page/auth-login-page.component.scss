@@ -1,0 +1,32 @@
+.login-form {
+    max-width: 300px;
+}
+
+.login-form-margin {
+    margin-bottom: 16px;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.login-form-button {
+    width: 100%;
+}
+.px-lg-btn {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+    color: #2b3941;
+    padding: 0 16px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 12px;
+}

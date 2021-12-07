@@ -1,0 +1,50 @@
+:host {
+  width: 100%;
+}
+//--===== start layout style =====//
+.summer-layout-wrapper {
+  min-height: 100vh;
+  background: #f6f9ff;
+}
+.summer-header {
+  height: 64px;
+  @apply border-b border-solid bg-white border-gray-100 flex justify-between items-center space-x-3;
+  @apply fixed top-0 left-0 w-full z-40;
+}
+.summer-sidebar {
+  @apply border-r border-solid border-gray-100 bg-white;
+  @apply fixed left-0 top-0 z-50 h-full overflow-y-auto;
+  min-height: 100vh;
+  background: #fff;
+}
+.summer-content {
+  @apply mt-14;
+  @apply p-3 sm:px-5 lg:px-8;
+}
+//--===== completed layout style =====//
+
+.summer-sidebar__logo {
+  @apply bg-white py-3 flex justify-center;
+  img {
+    @apply h-9;
+  }
+}
+.summer-sidebar__menus {
+  @apply border-none;
+}
+.summer-layout-inner {
+  background: #f6f9ff;
+}
+
+.summer-header-title {
+  @apply text-sm lg:text-base font-semibold text-black;
+}
+.summer-header__right {
+  @apply flex items-center space-x-3;
+}
+.summer-header__avater {
+  @apply h-5 w-5 lg:h-8 lg:w-8 rounded-full mr-1 lg:mr-2;
+}
+.summer-header_username {
+  @apply text-xs lg:text-sm font-medium text-black mr-1 lg:mr-2;
+}
