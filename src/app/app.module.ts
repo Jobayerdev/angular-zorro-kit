@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IconsProviderModule } from './icons-provider.module';
 import { NgModule } from '@angular/core';
-import { ThemeModule } from '../@theme/theme.module';
+import { ThemeModule } from './theme/theme.module';
 import en from '@angular/common/locales/en';
 import { registerLocaleData } from '@angular/common';
 

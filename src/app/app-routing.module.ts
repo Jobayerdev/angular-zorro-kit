@@ -1,16 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthorizedGuard } from '../@shared/guard/authorized.guard';
+import { AuthorizedGuard } from './guard/authorized.guard';
 import { NgModule } from '@angular/core';
-import { UnAuthorizationGuard } from './../@shared/guard/unAuthorized.guard';
-import { ZorroLayoutComponent } from '../@theme/layouts/zorro-layout.component';
+import { UnAuthorizationGuard } from './guard/unAuthorized.guard';
+import { ZorroLayoutComponent } from './theme/layouts/zorro-layout.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'auth' },
   {
     path: 'auth',
     loadChildren: () =>
-      import('../@features/auth/auth.module').then((m) => m.AuthModule),
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
     canActivate: [UnAuthorizationGuard],
   },
   {
@@ -26,14 +26,14 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('../@features/dashboard/dashboard.module').then(
+          import('./modules/dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
       },
       {
         path: 'users',
         loadChildren: () =>
-          import('../@features/users/users-view/users-view.module').then(
+          import('./modules/users/users-view/users-view.module').then(
             (m) => m.UsersViewModule
           ),
       },
