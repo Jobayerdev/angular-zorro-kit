@@ -3,7 +3,7 @@ import { ILoginCredential } from '../interfaces';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../../environments/environment';
-import { storage } from 'src/app/@shared/services/utils/localStorage.utilservice';
+import { storage } from 'src/app/services/utils/localStorage.utilservice';
 @Injectable({
   providedIn: 'root',
 })
