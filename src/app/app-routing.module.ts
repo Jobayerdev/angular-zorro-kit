@@ -11,12 +11,12 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () =>
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [UnAuthorizationGuard],
+    // canActivate: [UnAuthorizationGuard],
   },
   {
     path: 'admin',
     component: ZorroLayoutComponent,
-    canActivate: [AuthorizedGuard],
+    // canActivate: [AuthorizedGuard],
     children: [
       {
         path: '',
